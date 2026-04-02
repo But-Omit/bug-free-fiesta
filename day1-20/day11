@@ -92,3 +92,10 @@ print(s2.lower())       # goodbye
 # 检查s1和s2的值
 print(s1)               # hello, world
 print(s2)               # GOODBYE
+
+s = 'hello, world!'
+print(s.find('or'))      # 8
+print(s.find('or', 9))   # -1
+print(s.find('of'))      # -1
+print(s.index('or'))     # 8
+print(s.index('or', 9))  # ValueError: substring not found

@@ -148,3 +148,9 @@ s = 'I love you'
 words = s.split()
 print(words)            # ['I', 'love', 'you']
 print('~'.join(words))  # I~love~you
+
+s = 'I#love#you#so#much'
+words = s.split('#')
+print(words)  # ['I', 'love', 'you', 'so', 'much']
+words = s.split('#', 2)
+print(words)  # ['I', 'love', 'you#so#much']

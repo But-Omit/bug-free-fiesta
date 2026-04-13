@@ -116,9 +116,9 @@ print(s2.isalpha())  # False
 print(s2.isalnum())  # True
 
 s = 'hello, world'
-print(s.center(20, '*'))  # ****hello, world****
-print(s.rjust(20))        #         hello, world
-print(s.ljust(20, '~'))   # hello, world~~~~~~~~
+print(s.center (20, '*'))  # ****hello, world****
+print(s.rjust (20))        #         hello, world
+print(s.ljust (20, '~'))   # hello, world~~~~~~~~
 print('33'.zfill(5))      # 00033
 print('-33'.zfill(5))     # -0033
 
@@ -134,8 +134,22 @@ a = 321
 b = 123
 print(f'{a} * {b} = {a * b}')
 
-s1 = '   jackfrued@126.com  '
-print(s1.strip())      # jackfrued@126.com
+"""
+3.1415926	{:.2f}	'3.14'	保留小数点后两位
+3.1415926	{:+.2f}	'+3.14'	带符号保留小数点后两位
+-1	{:+.2f}	'-1.00'	带符号保留小数点后两位
+3.1415926	{:.0f}	'3'	不带小数
+123	{:0>10d}	'0000000123'	左边补0，补够10位
+123	{:x<10d}	'123xxxxxxx'	右边补x ，补够10位
+123	{:>10d}	'       123'	左边补空格，补够10位
+123	{:<10d}	'123       '	右边补空格，补够10位
+123456789	{:,}	'123,456,789'	逗号分隔格式
+0.123	{:.2%}	'12.30%'	百分比格式
+123456789	{:.2e}	'1.23e+08'	科学计数法格式
+"""
+
+s1 = '   ButOmit  '
+print(s1.strip())      # ButOmit
 s2 = '~你好，世界~'
 print(s2.lstrip('~'))  # 你好，世界~
 print(s2.rstrip('~'))  # ~你好，世界
@@ -154,3 +168,11 @@ words = s.split('#')
 print(words)  # ['I', 'love', 'you', 'so', 'much']
 words = s.split('#', 2)
 print(words)  # ['I', 'love', 'you#so#much']
+
+a = '骆昊'
+b = a.encode('utf-8')
+c = a.encode('gbk')
+print(b)                  # b'\xe9\xaa\x86\xe6\x98\x8a'
+print(c)                  # b'\xc2\xe6\xea\xbb'
+print(b.decode('utf-8'))  # 骆昊
+print(c.decode('gbk'))    # 骆昊

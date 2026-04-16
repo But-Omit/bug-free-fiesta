@@ -69,3 +69,20 @@ print(set2 == set3)  # True
 
 print(set1.issubset(set2))    # True
 print(set2.issuperset(set1))  # True
+
+set1 = {1, 10, 100}
+
+# 添加元素
+set1.add(1000)
+set1.add(10000)
+print(set1)  # {1, 100, 1000, 10, 10000}
+
+# 删除元素
+set1.discard(10)
+if 100 in set1:
+    set1.remove(100)
+print(set1)  # {1, 1000, 10000}
+
+# 清空元素
+set1.clear()
+print(set1)  # set()
